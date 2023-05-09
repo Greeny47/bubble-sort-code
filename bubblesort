@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void bubbleSort(float arr[], float N)
+
+{
+    int i, j;
+    for (i = 0; i < N - 1; i++)
+
+        for (j = 0; j < N - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(arr[j], arr[j + 1]);
+}
+
+void printArray(float arr[], float size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+
+int main()
+{
+    float arr[] = { 69, 71, 71.5, 73, 64.5, 69, 65, 74, 72.5, 72, 71, 69.5, 68.5};
+    float N = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, N);
+    cout << "Sorted array: \n";
+    printArray(arr, N);
+    return 0;
+}
